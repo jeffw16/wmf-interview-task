@@ -81,7 +81,7 @@ require_once(__DIR__ . '/includes/header.php');
             </div>
             <div class="form-group">
                 <label>Amount of donation</label>
-                <input type="number" id="donation_amount" name="donation_amount" class="form-control" min="0.00000001" step="0.00000001" required>
+                <input type="number" id="donation_amount" name="donation_amount" class="form-control" min="0.01" step="0.01" required>
             </div>
             <div class="form-group">
                 <label>Comments</label>
