@@ -16,7 +16,7 @@
 
         $('#currency').change(function() {
             let selected_option = $('#currency option:selected');
-            if (selected_option === 'BTC') {
+            if (selected_option === 'btc') {
                 // Change donation amount limits
                 let btc_limit = '0.00000001';
                 $('#donation_amount').attr('min', btc_limit);
