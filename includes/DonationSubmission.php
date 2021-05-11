@@ -47,6 +47,9 @@ class DonationSubmission {
         global $field_titles, $mysql_host, $mysql_user, $mysql_pass, $mysql_dbname;
         // Commit to DB
         // idempotency built-in by state check
+        if ($this->state_name === 'valid-committed') {
+            return true; // don't repeat, but it did already previously work
+        }
         if ($this->state_name === 'valid-uncommitted') {
             // Attempt connection to database using PDO
             try {
