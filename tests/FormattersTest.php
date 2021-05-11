@@ -5,7 +5,7 @@ require_once(__DIR__ . '/../includes/formatters.php');
 
 use PHPUnit\Framework\TestCase;
 
-final class TestValidators extends TestCase {
+final class FormattersTest extends TestCase {
     public function testValidateLastName() {
         $this->assertTrue(Validators::last_name('Doe'));
     }
