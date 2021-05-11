@@ -14,7 +14,7 @@ $validation_response = Validators::validate_all($_POST);
 <div class="row">
     <div class="col">
         <?php
-        if ($validation_response !== 'no problems') {
+        if ($validation_response === 'no problems') {
             $donation_submission = new DonationSubmission($_POST);
             $response = $donation_submission->commit();
             if ($response) {
