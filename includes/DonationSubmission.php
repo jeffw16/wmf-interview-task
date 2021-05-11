@@ -7,7 +7,7 @@
 
 require(__DIR__ . '/dicts.php');
 require(__DIR__ . '/validators.php');
-require(__DIR__ . '/../settings.php')
+require(__DIR__ . '/../settings.php');
 
 class DonationSubmission {
     // private $id; // int
