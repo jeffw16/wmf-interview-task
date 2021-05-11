@@ -10,7 +10,7 @@ final class TestValidators extends TestCase {
         $this->assertTrue(Validators::last_name('Doe'));
     }
 
-    public function testValidateAll() {
+    public function testValidateAllSuccess() {
         $values = [
             'last_name' => 'Doe',
             'first_name' => 'John',
@@ -28,6 +28,27 @@ final class TestValidators extends TestCase {
         ];
         $this->assertEquals(
             'no problems',
+            Validators::validate_all($values)
+        );
+    }
+
+    public function testValidateAllFailOnLastName() {
+        $values = [
+            'first_name' => 'John',
+            'street_address' => '123 Main St',
+            'city' => 'Kirkland',
+            'region' => 'Washington',
+            'country' => 'United States',
+            'postal_code' => '98033',
+            'phone_number' => '+1 (206) 321-2345',
+            'email_address' => 'jdoe@wikimedia.org',
+            'contact_method' => 'email',
+            'currency' => 'BTC',
+            'donation_amount' => '0.00000001',
+            'comments' => 'I love Wikipedia!',
+        ];
+        $this->assertEquals(
+            'last_name',
             Validators::validate_all($values)
         );
     }

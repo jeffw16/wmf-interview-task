@@ -20,7 +20,7 @@ require_once(__DIR__ . '/includes/header.php');
             </div>
             <div class="form-group">
                 <label>Street address</label>
-                <input type="text" name="last_name" class="form-control" required>
+                <input type="text" name="street_address" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>City</label>
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/includes/header.php');
             </div>
             <div class="form-group">
                 <label>State/Region</label>
-                <input type="text" name="reguib" class="form-control">
+                <input type="text" name="region" class="form-control">
             </div>
             <div class="form-group">
                 <label>Country</label>
