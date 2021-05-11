@@ -11,7 +11,7 @@ require(__DIR__ . '/../settings.php');
 
 class DonationSubmission {
     // private $id; // int
-    private $state_name; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
+    private $state_name = 'invalid-uncommitted'; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
     private $last_name; // string
     private $first_name; // string
     private $street_address; // string
