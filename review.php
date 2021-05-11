@@ -6,8 +6,8 @@
  */
 
 require(__DIR__ . '/includes/dicts.php');
-require(__DIR__ . '/includes/validators.php');
-require(__DIR__ . '/includes/formatters.php');
+require_once(__DIR__ . '/includes/validators.php');
+require_once(__DIR__ . '/includes/formatters.php');
 require_once(__DIR__ . '/includes/header.php');
 
 $validation_response = Validators::validate_all($_POST);

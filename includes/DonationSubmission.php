@@ -6,7 +6,7 @@
  */
 
 require(__DIR__ . '/dicts.php');
-require(__DIR__ . '/validators.php');
+require_once(__DIR__ . '/validators.php');
 require(__DIR__ . '/../settings.php');
 
 class DonationSubmission {
