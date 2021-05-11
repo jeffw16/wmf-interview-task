@@ -5,7 +5,7 @@
  * @author Jeffrey Wang
  */
 
-require_once(__DIR__ . '/dicts.php');
+require(__DIR__ . '/dicts.php');
 
 class Validators {
     public static function last_name($candidate) {
@@ -90,6 +90,8 @@ class Validators {
      * returns 'no problems' when successful, else returns the problematic field
      */
     public static function validate_all($assoc_arr) {
+        global $field_titles;
+        
         // Check whether all fields are there
         foreach ($field_titles as $field_id => $dontuse) {
             $value = $assoc_arr[$field_id];

@@ -5,9 +5,9 @@
  * @author Jeffrey Wang
  */
 
-require_once(__DIR__ . '/dicts.php');
-require_once(__DIR__ . '/validators.php');
-require_once(__DIR__ . '/../settings.php')
+require(__DIR__ . '/dicts.php');
+require(__DIR__ . '/validators.php');
+require(__DIR__ . '/../settings.php')
 
 class DonationSubmission {
     // private $id; // int
@@ -42,7 +42,7 @@ class DonationSubmission {
     }
 
     public function commit() {
-        global $mysql_host, $mysql_user, $mysql_pass, $mysql_dbname;
+        global $field_titles, $mysql_host, $mysql_user, $mysql_pass, $mysql_dbname;
         // Commit to DB
         // idempotency built-in by state check
         if ($this->state === 'valid-uncommitted') {

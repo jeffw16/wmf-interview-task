@@ -5,8 +5,8 @@
  * @author Jeffrey Wang
  */
 
-require_once(__DIR__ . '/includes/validators.php');
-require_once(__DIR__ . '/includes/DonationSubmission.php');
+require(__DIR__ . '/includes/validators.php');
+require(__DIR__ . '/includes/DonationSubmission.php');
 require_once(__DIR__ . '/includes/header.php');
 
 $validation_response = Validators::validate_all($_POST);
