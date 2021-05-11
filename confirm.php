@@ -22,13 +22,13 @@ $validation_response = Validators::validate_all($_POST);
                 <h3>Donation confirmed!</h3>
                 <p>Thank you so much for your donation to the Wikimedia Foundation!</p>
                 <p>Someone will be in touch with you soon regarding your pending donation.</p>
-                <p><a class="btn btn-danger" href="index.php">Return to home</a></p>
+                <p><a href="index.php">Return to home</a></p>
                 <?php
             } else {
                 ?>
                 <h3>There was a problem with the database</h3>
                 <p>Ruh roh!<?php echo " State: " . $donation_submission->getState(); ?></p>
-                <p><a class="btn btn-danger" href="index.php">Return to home</a></p>
+                <p><a href="index.php">Return to home</a></p>
                 <?php
             }
         } else {
