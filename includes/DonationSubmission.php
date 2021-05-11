@@ -28,6 +28,7 @@ class DonationSubmission {
     private $comments; // string
 
     public function __constructor($data) {
+        global $field_titles;
         // Validate values
         $validation_status = Validators::validate_all($data);
         if ($validation_status !== 'no problems') {
