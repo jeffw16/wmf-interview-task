@@ -29,6 +29,7 @@ class DonationSubmission {
 
     public function __constructor($data) {
         global $field_titles;
+        $this->state = 'invalid-uncommitted';
         // Validate values
         $validation_status = Validators::validate_all($data);
         if ($validation_status !== 'no problems') {
