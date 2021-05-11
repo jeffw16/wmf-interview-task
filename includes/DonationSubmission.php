@@ -11,7 +11,7 @@ require(__DIR__ . '/../settings.php');
 
 class DonationSubmission {
     // private $id; // int
-    private $state_name = 'invalid-uncommitted'; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
+    private $state_name; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
     private $last_name; // string
     private $first_name; // string
     private $street_address; // string
@@ -27,7 +27,7 @@ class DonationSubmission {
     private $donation_amount; // int
     private $comments; // string
 
-    public function __constructor($data) {
+    public function __construct($data) {
         global $field_titles;
         $this->state_name = 'invalid-uncommitted';
         // Validate values
