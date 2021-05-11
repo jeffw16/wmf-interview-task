@@ -17,6 +17,7 @@ $field_titles = [
     'email_address' => 'Email address',
     'contact_method' => 'Preferred form of contact',
     'currency' => 'Preferred form of payment',
+    'frequency' => 'Frequency of donation',
     'donation_amount' => 'Amount of donation',
     'comments' => 'Comments',
 ];

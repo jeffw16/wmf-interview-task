@@ -41,7 +41,7 @@ class Formatters {
         return $candidate;
     }
     
-    public static function email_address($email_candidate) {
+    public static function email_address($candidate) {
         return $candidate;
     }
 
