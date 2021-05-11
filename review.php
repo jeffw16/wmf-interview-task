@@ -30,7 +30,7 @@ $validation_response = Validators::validate_all($_POST);
                 }
             }
             ?>
-            <form method="post" action="submit.php">
+            <form method="post" action="confirm.php">
                 <?php
                 foreach ($_POST as $field => $value) {
                     echo "<input type=\"hidden\" name=\"$field\" value=\"$value\">";
