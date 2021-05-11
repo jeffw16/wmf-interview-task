@@ -92,7 +92,7 @@ class Formatters {
         global $erapi_access_key;
         // currency conversion
         // Build Swap
-        $swap = (new Builder())
+        $swap = (new Swap\Builder())
         ->add('exchange_rates_api', ['access_key' => $erapi_access_key])
         ->build();
 
