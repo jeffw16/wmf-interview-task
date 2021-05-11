@@ -28,6 +28,7 @@ $validation_response = Validators::validate_all($_POST);
                 ?>
                 <h3>There was a problem with the database</h3>
                 <p>Ruh roh!<?php echo " State: " . $donation_submission->getState(); ?></p>
+                <p><a class="btn btn-danger" href="index.php">Return to home</a></p>
                 <?php
             }
         } else {
