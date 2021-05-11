@@ -31,7 +31,7 @@ $validation_response = Validators::validate_all($_POST);
             ?>
             </p>
             <p><a href="javascript:window.history.go(-1)">Go back and try again</a></p>
-            </php
+            <?php
         }
         ?>
     </div>
