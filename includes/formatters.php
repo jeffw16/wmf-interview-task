@@ -103,7 +103,7 @@ class Formatters {
             'EUR' => '1.21',
             'BTC' => '55561.35',
         ];
-        $converted_val = $amount * $rates[$currency];
+        $converted_val = sprintf("%.2f", $amount * $rates[$currency]);
         $formatted = "In USD: $$converted_val";
         return $formatted;
     }
