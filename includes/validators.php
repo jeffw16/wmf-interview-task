@@ -91,14 +91,14 @@ class Validators {
      */
     public static function validate_all($assoc_arr) {
         global $field_titles;
-        
+
         // Check whether all fields are there
         foreach ($field_titles as $field_id => $dontuse) {
             $value = $assoc_arr[$field_id];
             if ($value === null) {
                 return $field_id;
             }
-            if (function_exists('Validators::' . $field_id)) {
+            if (method_exists('Validators', $field_id)) {
                 if ($field_id === 'donation_amount') {
                     $individual_result = Validators::donation_amount($value, $assoc_arr['currency']);
                 } else {
