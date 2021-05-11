@@ -37,6 +37,14 @@ class DonationSubmission {
         } else {
             // Initialize these values
             foreach ($field_titles as $field_id => $dontuse) {
+                if ($field_id === 'donation_amount') {
+                    $currency = $data['currency'];
+                    if ($currency === 'EUR' || $currency === 'USD') {
+                        $data[$field_id] *= 100;
+                    } elseif ($currency === 'BTC') {
+                        $data[$field_id] *= 100000000;
+                    }
+                }
                 $this->$field_id = $data[$field_id];
             }
             $this->state_name = 'valid-uncommitted';
