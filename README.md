@@ -12,5 +12,10 @@ This is Jeffrey Wang's solution for the Wikimedia Foundation's Associate Enginee
 2. Fill out the values of `settings_sample.php` and save them to `settings.php`.
 3. Run `composer install && composer update` to install Composer dependencies.
 
+## Testing instructions
+After installing Composer, run `./vendor/bin/phpunit tests` from this application's base directory.
+
 ## Dependencies used
 This uses the currency conversion library from https://github.com/ojhaujjwal/currency-converter-php.
+
+This uses PHPUnit for unit testing.
