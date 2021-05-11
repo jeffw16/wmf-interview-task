@@ -89,16 +89,21 @@ class Formatters {
     }
 
     public static function currency_converter($amount, $currency) {
-        global $erapi_access_key;
+        // global $erapi_access_key;
         // currency conversion
         // Build Swap
-        $swap = (new Swap\Builder())
-        ->add('exchange_rates_api', ['access_key' => $erapi_access_key])
-        ->build();
+        // $swap = (new Swap\Builder())
+        // ->add('exchange_rates_api', ['access_key' => $erapi_access_key])
+        // ->build();
 
-        // Get the latest EUR/USD rate
-        $rate = $swap->latest("$currency/USD");
-        $converted_val = $amount * $rate->getValue();
+        // // Get the latest EUR/USD rate
+        // $rate = $swap->latest("$currency/USD");
+        // $converted_val = $amount * $rate->getValue();
+        $rates = [
+            'EUR' => '1.21',
+            'BTC' => '55561.35',
+        ];
+        $converted_val = $amount * $rates[$currency];
         $formatted = "In USD: $$converted_val";
         return $formatted;
     }

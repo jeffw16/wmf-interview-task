@@ -8,6 +8,9 @@
         "phpunit/phpunit": "^6"
     },
     "require": {
-        "florianv/swap": "*"
+        "florianv/swap": "*",
+        "php-http/curl-client": "^1.7",
+        "nyholm/psr7": "^0.2.3",
+        "php-http/message": "^1.7"
     }
 }
