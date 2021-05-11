@@ -11,7 +11,7 @@ require(__DIR__ . '/../settings.php');
 
 class DonationSubmission {
     // private $id; // int
-    private $state; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
+    private $state_name; // string: {invalid-uncommitted, valid-uncommitted, valid-committed}
     private $last_name; // string
     private $first_name; // string
     private $street_address; // string
@@ -29,17 +29,17 @@ class DonationSubmission {
 
     public function __constructor($data) {
         global $field_titles;
-        $this->state = 'invalid-uncommitted';
+        $this->state_name = 'invalid-uncommitted';
         // Validate values
         $validation_status = Validators::validate_all($data);
         if ($validation_status !== 'no problems') {
-            $this->state = 'invalid-uncommitted';
+            $this->state_name = 'invalid-uncommitted';
         } else {
             // Initialize these values
             foreach ($field_titles as $field_id => $dontuse) {
                 $this->$field_id = $data[$field_id];
             }
-            $this->state = 'valid-uncommitted';
+            $this->state_name = 'valid-uncommitted';
         }
     }
 
@@ -47,7 +47,7 @@ class DonationSubmission {
         global $field_titles, $mysql_host, $mysql_user, $mysql_pass, $mysql_dbname;
         // Commit to DB
         // idempotency built-in by state check
-        if ($this->state === 'valid-uncommitted') {
+        if ($this->state_name === 'valid-uncommitted') {
             // Attempt connection to database using PDO
             try {
                 $options = [
@@ -96,7 +96,7 @@ class DonationSubmission {
             $sql_successful = $statement->execute($mapping);
 
             if ($sql_successful) {
-                $this->state = 'valid-committed';
+                $this->state_name = 'valid-committed';
                 return true;
             }
         }
@@ -104,6 +104,6 @@ class DonationSubmission {
     }
 
     public function getState() {
-        return $this->state;
+        return $this->state_name;
     }
 }
