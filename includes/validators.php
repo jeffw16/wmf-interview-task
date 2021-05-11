@@ -52,7 +52,7 @@ class Validators {
     }
     
     public static function email_address($email_candidate) {
-        return strlen($candidate) > 0 && strlen($candidate) <= 254 && filter_var($email_candidate, FILTER_VALIDATE_EMAIL); // 254 is the limit per RFC 5321
+        return strlen($email_candidate) > 0 && strlen($email_candidate) <= 254 && filter_var($email_candidate, FILTER_VALIDATE_EMAIL); // 254 is the limit per RFC 5321
     }
 
     public static function contact_method($candidate) {
