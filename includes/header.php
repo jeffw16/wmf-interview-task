@@ -26,6 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Wikimedia_Foundation_logo_-_horizontal.svg" width="100%">
                 <h2>Wikimedia Foundation Donations</h2>
             </div>
         </div>
