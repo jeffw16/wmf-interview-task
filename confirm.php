@@ -16,12 +16,20 @@ $validation_response = Validators::validate_all($_POST);
         <?php
         if ($validation_response !== 'no problems') {
             $donation_submission = new DonationSubmission($_POST);
-            ?>
-            <h3>Donation confirmed!</h3>
-            <p>Thank you so much for your donation to the Wikimedia Foundation!</p>
-            <p>Someone will be in touch with you soon regarding your pending donation.</p>
-            <p><a class="btn btn-danger" href="index.php">Return to home</a></p>
-            <?php
+            $response = $donation_submission->commit();
+            if ($response) {
+                ?>
+                <h3>Donation confirmed!</h3>
+                <p>Thank you so much for your donation to the Wikimedia Foundation!</p>
+                <p>Someone will be in touch with you soon regarding your pending donation.</p>
+                <p><a class="btn btn-danger" href="index.php">Return to home</a></p>
+                <?php
+            } else {
+                ?>
+                <h3>There was a problem with the database</h3>
+                <p>Ruh roh!</p>
+                <?php
+            }
         } else {
             ?>
             <h3>There was a problem...</h3>
