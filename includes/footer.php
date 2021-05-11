@@ -14,7 +14,7 @@
             $('#spinner').removeClass('displaynone');
         });
 
-        $('#currency').click(function() {
+        $('#currency').change(function() {
             let selected_option = $('#currency option:selected');
             if (selected_option === 'BTC') {
                 // Change donation amount limits
