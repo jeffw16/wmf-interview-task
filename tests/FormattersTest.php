@@ -6,10 +6,6 @@ require_once(__DIR__ . '/../includes/formatters.php');
 use PHPUnit\Framework\TestCase;
 
 final class FormattersTest extends TestCase {
-    public function testValidateLastName() {
-        $this->assertTrue(Validators::last_name('Doe'));
-    }
-
     public function testCurrencyConverter() {
         $this->assertStringStartsWith(
             'In USD: $',

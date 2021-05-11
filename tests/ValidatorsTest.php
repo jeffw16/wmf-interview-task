@@ -23,6 +23,7 @@ final class ValidatorsTest extends TestCase {
             'email_address' => 'jdoe@wikimedia.org',
             'contact_method' => 'email',
             'currency' => 'BTC',
+            'frequency' => 'yearly',
             'donation_amount' => '0.00000001',
             'comments' => 'I love Wikipedia!',
         ];
@@ -44,6 +45,7 @@ final class ValidatorsTest extends TestCase {
             'email_address' => 'jdoe@wikimedia.org',
             'contact_method' => 'email',
             'currency' => 'BTC',
+            'frequency' => 'yearly',
             'donation_amount' => '0.00000001',
             'comments' => 'I love Wikipedia!',
         ];
