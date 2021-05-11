@@ -94,10 +94,12 @@ class Validators {
 
         // Check whether all fields are there
         foreach ($field_titles as $field_id => $dontuse) {
-            $value = $assoc_arr[$field_id];
-            if ($value === null) {
+            if (!array_key_exists($field_id, $assoc_arr)) {
                 return $field_id;
             }
+
+            $value = $assoc_arr[$field_id];
+            
             if (method_exists('Validators', $field_id)) {
                 if ($field_id === 'donation_amount') {
                     $individual_result = Validators::donation_amount($value, $assoc_arr['currency']);
