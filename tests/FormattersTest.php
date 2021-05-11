@@ -13,14 +13,14 @@ final class TestValidators extends TestCase {
     public function testCurrencyConverter() {
         $this->assertStringStartsWith(
             'In USD: $',
-            Formatters::currency_converter('3.22', 'EUR');
+            Formatters::currency_converter('3.22', 'EUR')
         );
     }
 
     public function testDonationAmount() {
         $this->assertEquals(
             '€4.20',
-            Formatters::donation_amount('4.20', 'EUR');
+            Formatters::donation_amount('4.20', 'EUR')
         );
     }
 }
