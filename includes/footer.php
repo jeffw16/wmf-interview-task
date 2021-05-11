@@ -15,8 +15,8 @@
         });
 
         $('#currency').change(function() {
-            let selected_option = $('#currency option:selected');
-            if (selected_option === 'btc') {
+            let selected_option = $('#currency option:selected').val();
+            if (selected_option === 'BTC') {
                 // Change donation amount limits
                 let btc_limit = '0.00000001';
                 $('#donation_amount').attr('min', btc_limit);
