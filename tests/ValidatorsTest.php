@@ -6,6 +6,10 @@ require_once(__DIR__ . '/../includes/validators.php');
 use PHPUnit\Framework\TestCase;
 
 final class TestValidators extends TestCase {
+    public function testValidateLastName() {
+        $this->assertTrue(Validators::last_name('Doe'));
+    }
+
     public function testValidateAll() {
         $values = [
             'last_name' => 'Doe',
