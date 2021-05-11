@@ -89,7 +89,7 @@ class DonationSubmission {
             . ":comments "
             . ")";
         
-            $statement = $this->pdo->prepare($sql_query);
+            $statement = $pdo->prepare($sql_query);
 
             $mapping = [];
             foreach ($field_titles as $field_id => $dontuse) {
