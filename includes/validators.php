@@ -150,6 +150,6 @@ class Validators {
             case 'comments':
                 return "Comments cannot be longer than 2048 characters.";
         }
-        return "Unknown error";
+        return "Unknown error " . $result;
     }
 }
