@@ -15,7 +15,7 @@ $validation_response = Validators::validate_all($_POST);
 <div class="row">
     <div class="col">
         <?php
-        if ($validation_response !== 'no problems') {
+        if ($validation_response === 'no problems') {
             ?>
             <h3>Review your donation</h3>
             <?php
