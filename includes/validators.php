@@ -116,7 +116,7 @@ class Validators {
     }
 
     public static function issue_tostring($result) {
-        switch ($validation_response) {
+        switch ($result) {
             case 'last_name':
                 return "Last name needs to be between 0 and 256 characters.";
             case 'first_name':
