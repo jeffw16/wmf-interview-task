@@ -7,6 +7,8 @@
 
 require(__DIR__ . '/../vendor/autoload.php');
 
+use Swap\Builder;
+
 class Formatters {
     public static function last_name($candidate) {
         return $candidate;
@@ -86,9 +88,16 @@ class Formatters {
     }
 
     public static function currency_converter($amount, $currency) {
+        global $erapi_access_key;
         // currency conversion
-        $converter = new CurrencyConverter\CurrencyConverter;
-        $converted_val = $amount * $converter->convert($currency, 'USD');
+        // Build Swap
+        $swap = (new Builder())
+        ->add('exchange_rates_api', ['access_key' => $erapi_access_key])
+        ->build();
+
+        // Get the latest EUR/USD rate
+        $rate = $swap->latest("$currency/USD");
+        $converted_val = $amount * $rate->getValue();
         $formatted = "In USD: $$converted_val";
         return $formatted;
     }

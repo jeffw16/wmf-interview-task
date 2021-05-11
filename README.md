@@ -16,6 +16,6 @@ This is Jeffrey Wang's solution for the Wikimedia Foundation's Associate Enginee
 After installing Composer, run `./vendor/bin/phpunit tests` from this application's base directory.
 
 ## Dependencies used
-This uses the currency conversion library from https://github.com/ojhaujjwal/currency-converter-php.
+This uses the currency conversion library from https://github.com/florianv/swap.
 
 This uses PHPUnit for unit testing.
