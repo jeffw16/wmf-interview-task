@@ -17,7 +17,7 @@ $validation_response = Validators::validate_all($_POST);
         if ($validation_response === 'no problems') {
             $donation_submission = new DonationSubmission($_POST);
             $response = $donation_submission->commit();
-            if ($response) {
+            if ($response && $donation_submission->getState() === 'valid-committed') {
                 ?>
                 <h3>Donation confirmed!</h3>
                 <p>Thank you so much for your donation to the Wikimedia Foundation!</p>
@@ -27,7 +27,7 @@ $validation_response = Validators::validate_all($_POST);
             } else {
                 ?>
                 <h3>There was a problem with the database</h3>
-                <p>Ruh roh!</p>
+                <p>Ruh roh!<?php echo " State: " . $donation_submission->getState(); ?></p>
                 <?php
             }
         } else {

@@ -100,4 +100,8 @@ class DonationSubmission {
         }
         return false; // any other state, return false
     }
+
+    public function getState() {
+        return $this->state;
+    }
 }
